@@ -22,7 +22,7 @@ class Cooltv:
             if tmp.find('문자중계') != -1: continue
             if tmp.find('방송전') != -1: continue
             item = {'cate' : tmp.split("'")[0], 'leauge' : regex[0].search(tmp).group('leauge')}
-            item['id'], d, item['name'], t = regex[1].search(tmp).group('data').split(',')
+            item['id'], d, item['name'], item['time'] = regex[1].search(tmp).group('data').split(',')
             item['name'] = re.sub('\(\d+\)', '', item['name'].replace("'", '').replace('	', ' ')).strip()
             if item['cate'] == 'tv' and item['leauge'] == 'KM': continue
             ret.append(item)
