@@ -49,7 +49,7 @@ $("body").on('click', '#json_btn', function(e){
 
 $("body").on('click', '#play_btn', function(e){
   e.preventDefault();
-  globalSendCommand('play_url', $(this).data('id'), null, null, function(ret){
+  globalSendCommand('play_url', $(this).data('id'), $(this).data('name'), null, function(ret){
     if (ret.data == null) {
       notify('에러', 'danger');
       return;
@@ -71,7 +71,7 @@ $("body").on('click', '#play_btn', function(e){
 
 $("body").on('click', '#play_url_btn', function(e){
   e.preventDefault();
-  globalSendCommand('play_url', $(this).data('id'),null, null, function(ret){
+  globalSendCommand('play_url', $(this).data('id'), $(this).data('name'), null, function(ret){
     if (ret.data == null) {
       notify('에러', 'danger');
       return;
