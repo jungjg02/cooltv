@@ -24,6 +24,7 @@ class Cooltv:
             item = {'cate' : tmp.split("'")[0], 'leauge' : regex[0].search(tmp).group('leauge')}
             item['id'], d, item['name'], item['time'] = regex[1].search(tmp).group('data').split(',')
             item['name'] = re.sub('\(\d+\)', '', item['name'].replace("'", '').replace('	', ' ')).strip()
+            item['time'] = re.sub('\(\d+\)', '', item['time'].replace("'", '').replace('	', ' ')).strip()
             if item['cate'] == 'tv' and item['leauge'] == 'KM': continue
             ret.append(item)
         return ret
